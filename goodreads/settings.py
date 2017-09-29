@@ -155,3 +155,6 @@ JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
 
 }
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(os.getcwd(), 'media')
+CURRENT_HOST = "http://localhost:8000"

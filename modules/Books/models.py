@@ -15,11 +15,12 @@ GENEROS = (
 
 class Book(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, help_text="El titulo del libro")
     author = models.ForeignKey(
         Author, on_delete=models.CASCADE, related_name='books')
     isbn = models.CharField(max_length=100)
-    date_published = models.DateField()
+    date_published = models.DateField(
+        help_text="Este es la fecha de publicaciòn")
     cover = models.URLField()
     prologue = models.TextField()
     raiting = models.DecimalField(decimal_places=1, max_digits=3)
