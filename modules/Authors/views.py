@@ -12,6 +12,13 @@ from .models import Author
 
 
 class ListAuthor(APIView):
+    """
+        get:
+        Return a list of authors
+        post:
+        Create an author in scratch
+    """
+    #
 
     def get(self, request):
         authors = Author.objects.all()  # querysets SELECT  * FROM Author
