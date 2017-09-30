@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/authors/', include('modules.Authors.urls')),
-    url(r'^api/v1/books/', include('modules.Books.urls')),
+    url(r'^api/v1/books/', include('modules.Books.urls', namespace='books')),
     url(r'^api/v1/users/', include('modules.Users.urls')),
     url(r'^api/v1/auth/$', obtain_jwt_token),
     url(r'^api/v1/auth/refresh/$', refresh_jwt_token),

@@ -21,12 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-o^f2!yq436m=&+*_gcbhv^gs4sp5r--2x!hc4_))f68u!=ffd'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -86,15 +83,6 @@ WSGI_APPLICATION = 'goodreads.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {'default': {'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                         'NAME': 'good_db',
-                         'USER': 'admin_good',
-                         'PASSWORD': 'good2017',
-                         'HOST': 'localhost',
-                         'PORT': '5432'
-                         }
-             }
 
 
 # Password validation
@@ -157,4 +145,4 @@ JWT_AUTH = {
 }
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(os.getcwd(), 'media')
-CURRENT_HOST = "http://localhost:8000"
+CURRENT_HOST = "http://localhost:8000"  # os.getenv('current_host')

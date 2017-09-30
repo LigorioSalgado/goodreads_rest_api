@@ -5,19 +5,12 @@ from django.conf import settings
 
 
 class BookSeriallizer(serializers.ModelSerializer):
-    url_cover = serializers.SerializerMethodField()
+
     #author = AuthorSerializer(read_only=True)
 
     class Meta:
         model = Book
-        fields = ('title', 'isbn', 'prologue', 'author',
-                  'date_published', 'url_cover')
-
-    def get_url_cover(self, obj):
-        if "/media/" in obj.cover:
-            return settings.CURRENT_HOST + obj.cover
-        else:
-            return obj.cover
+        fields = '__all__'
 
 
 class QuerysBookSerializer(serializers.Serializer):
